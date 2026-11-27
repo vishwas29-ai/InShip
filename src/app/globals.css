@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
+/* ========================================
+   GLOBAL THEME
+======================================== */
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+
+/* ========================================
+   SYSTEM DARK MODE
+======================================== */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -23,4 +28,192 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   INSHIP ADMIN DASHBOARD
+======================================== */
+
+.admin-dashboard {
+  --background: #f4fafa;
+  --foreground: #142b49;
+
+  min-height: 100vh;
+  background-color: #f4fafa;
+  color: #142b49;
+  color-scheme: light;
+}
+
+/* Dashboard headings */
+
+.admin-dashboard h1 {
+  color: #142b49;
+  font-size: clamp(1.8rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.admin-dashboard h2 {
+  color: #142b49;
+  font-weight: 700;
+}
+
+.admin-dashboard h3,
+.admin-dashboard h4 {
+  color: #142b49;
+}
+
+/* Improve secondary text visibility */
+
+.admin-dashboard .text-gray-500 {
+  color: #526477;
+}
+
+.admin-dashboard .text-gray-900 {
+  color: #142b49;
+}
+
+/* White dashboard cards */
+
+.admin-dashboard .bg-white {
+  background-color: #ffffff;
+}
+
+.admin-dashboard .rounded-xl.bg-white {
+  border: 1px solid #dce9e8;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(20, 43, 73, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.admin-dashboard .rounded-xl.bg-white:hover {
+  box-shadow: 0 6px 20px rgba(20, 43, 73, 0.09);
+}
+
+/* Agent assignment panels */
+
+.admin-dashboard .bg-gray-50 {
+  background-color: #f8fafc;
+}
+
+.admin-dashboard .border-gray-200 {
+  border-color: #dce9e8;
+}
+
+.admin-dashboard .border-t {
+  border-color: #e2e8f0;
+}
+
+/* Receiver details section */
+
+.admin-dashboard .bg-teal-50 {
+  background-color: #effaf8;
+}
+
+/* Input fields and dropdowns */
+
+.admin-dashboard select,
+.admin-dashboard input,
+.admin-dashboard textarea {
+  background-color: #ffffff;
+  color: #142b49;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  min-height: 42px;
+  color-scheme: light;
+  outline: none;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.admin-dashboard select option {
+  background-color: #ffffff;
+  color: #142b49;
+}
+
+.admin-dashboard select:focus,
+.admin-dashboard input:focus,
+.admin-dashboard textarea:focus {
+  border-color: #008f84;
+  box-shadow: 0 0 0 3px rgba(0, 143, 132, 0.12);
+}
+
+/* Primary action buttons */
+
+.admin-dashboard .bg-teal-600,
+.admin-dashboard .bg-blue-600 {
+  background-color: #008f84;
+  color: #ffffff;
+}
+
+.admin-dashboard .bg-teal-600:hover,
+.admin-dashboard .bg-blue-600:hover {
+  background-color: #00756c;
+}
+
+/* Statistics and parcel charges */
+
+.admin-dashboard .text-blue-600 {
+  color: #008f84;
+}
+
+/* Button styling */
+
+.admin-dashboard button,
+.admin-dashboard a {
+  transition: background-color 0.2s ease,
+              box-shadow 0.2s ease,
+              color 0.2s ease;
+}
+
+.admin-dashboard button:not(:disabled) {
+  cursor: pointer;
+}
+
+.admin-dashboard button:disabled {
+  cursor: not-allowed;
+}
+
+.admin-dashboard button:focus-visible,
+.admin-dashboard a:focus-visible {
+  outline: 2px solid #008f84;
+  outline-offset: 3px;
+}
+
+/* Order ID */
+
+.admin-dashboard .font-mono {
+  color: #334155;
+}
+
+/* Text selection */
+
+.admin-dashboard ::selection {
+  background-color: #ccfbf1;
+  color: #134e4a;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 640px) {
+
+  .admin-dashboard main {
+    padding: 24px 16px;
+  }
+
+  .admin-dashboard .rounded-xl.bg-white {
+    padding: 16px;
+  }
+
+  .admin-dashboard h1 {
+    font-size: 26px;
+  }
+
+  .admin-dashboard select {
+    font-size: 14px;
+  }
 }
